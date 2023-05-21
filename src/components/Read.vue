@@ -9,8 +9,9 @@ t<template>
               </div>
             <div class="content">{{value.content}}</div>
           </div>
-        <button>글쓰기</button>
-      </div>
+    <button @click="write">글쓰기</button>
+     
+  </div>
 
 </template>
 <script>
@@ -21,6 +22,13 @@ t<template>
       return {
         data: data
       };
-    }
+    },
+    methods: {
+      write() {
+        this.$router.push({
+          path: 'create'
+        })
+      }
+    },
   };
 </script>
