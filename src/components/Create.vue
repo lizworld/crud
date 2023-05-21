@@ -1,6 +1,6 @@
 <template>
   <div>
-     <h2>글쓰기</h2>
+     <h2> {{index !==undefined? '수정하기':'글쓰기'}}</h2>
         <div class="container">
       <input v-model="writer" type="text" placeholder="글쓴이">
       <input v-model="title" type="text" placeholder="제목">
