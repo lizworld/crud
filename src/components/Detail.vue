@@ -9,6 +9,7 @@
             <div class="content">{{data.content}}</div>
 
           </div>
+    <button @click="deleteData">삭제</button>
   </div>
 </template>
 <script>
@@ -21,6 +22,14 @@
         data: data[index],
 
       }
+    },
+    methods: {
+      deleteData() {
+        data.splice(this.index, 1)
+        this.$router.push({
+          path: '/'
+        })
+      },
     }
   }
 </script>
