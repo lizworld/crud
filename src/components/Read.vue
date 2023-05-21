@@ -1,7 +1,7 @@
 t<template>
   <div>
      <h2>사용자 게시판</h2>
-      <div class="container" v-for="(value,index) in data" :key="index">
+      <div class="container" v-for="(value,index) in data" :key="index" @click="detail(index)">
 
             <div class="f_wrap">
                 <div class="title">{{value.title}}</div>
@@ -27,6 +27,14 @@ t<template>
       write() {
         this.$router.push({
           path: 'create'
+        })
+      },
+      detail(index) {
+        this.$router.push({
+          name: 'Detail',
+          params: {
+            contentId: index
+          }
         })
       }
     },
