@@ -9,7 +9,8 @@
             <div class="content">{{data.content}}</div>
 
           </div>
-    <button @click="deleteData">삭제</button>
+      <button @click="updateData">수정</button>
+            <button @click="deleteData">삭제</button>
   </div>
 </template>
 <script>
@@ -20,6 +21,7 @@
       const index = this.$route.params.contentId
       return {
         data: data[index],
+        index: index
 
       }
     },
@@ -30,6 +32,14 @@
           path: '/'
         })
       },
+      updateData() {
+        this.$router.push({
+          name: 'Create',
+          params: {
+            contentId: this.index
+          }
+        })
+      }
     }
   }
 </script>
